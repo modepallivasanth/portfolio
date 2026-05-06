@@ -5,12 +5,29 @@ if (yearEl) {
 
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.getElementById('nav-menu');
+const nav = document.querySelector('.nav');
 
 if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
     navMenu.classList.toggle('is-open');
+  });
+
+  // Close menu on scroll
+  document.addEventListener('scroll', () => {
+    if (navMenu.classList.contains('is-open')) {
+      navMenu.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  }, { passive: true });
+
+  // Close menu on click outside
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('is-open') && !nav.contains(e.target)) {
+      navMenu.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
