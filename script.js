@@ -45,3 +45,26 @@ document.querySelectorAll('[data-copy]').forEach(button => {
     }
   });
 });
+
+// Scroll Animation Observer
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fade-in-up 0.8s ease forwards';
+      entry.target.style.opacity = '1';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Apply observer to cards and sections
+document.querySelectorAll('.card, .section-heading, .skills-table > div').forEach(el => {
+  el.style.opacity = '0'; // initially hidden
+  observer.observe(el);
+});
