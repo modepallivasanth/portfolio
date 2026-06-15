@@ -1,0 +1,50 @@
+/* ── Summary Section ── */
+.summary-section {
+  padding: 2rem 0 0;
+}
+
+.summary-card {
+  position: relative;
+  padding: 2rem 2rem 2rem 2.5rem;
+  border-left: 3px solid var(--copper);
+  max-width: 800px;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--copper), var(--roast));
+  border-radius: 2px;
+}
+
+.summary-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--cream-dim);
+}
+
+.summary-text strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.summary-looking {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--cream-muted);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .summary-card {
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+  }
+}

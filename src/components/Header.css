@@ -1,0 +1,220 @@
+/* ── Header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(12, 9, 7, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all var(--transition);
+}
+
+.site-header.scrolled {
+  background: rgba(12, 9, 7, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+/* ── Brand ── */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  transition: opacity var(--transition);
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--copper), #A0622A);
+  color: var(--bg-primary);
+  box-shadow: 0 3px 12px rgba(196, 122, 58, 0.3);
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ── Nav Menu ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.85rem;
+  color: var(--cream-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-link.active {
+  color: var(--copper);
+}
+
+.nav-resume-btn {
+  margin-left: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgba(196, 122, 58, 0.4);
+  border-radius: var(--radius-pill);
+  color: var(--copper);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-resume-btn:hover {
+  background: rgba(196, 122, 58, 0.1);
+  border-color: var(--copper);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 122, 58, 0.15);
+}
+
+.nav-resume-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Mobile Toggle ── */
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+  transition: all var(--transition);
+}
+
+.nav-toggle:hover {
+  border-color: var(--copper);
+}
+
+.nav-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--cream);
+}
+
+/* ── Mobile Menu ── */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 5rem 1.5rem 2rem;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--surface-border);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.35s var(--ease-out);
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .nav-links.is-open {
+    right: 0;
+  }
+
+  .nav-link {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .nav-resume-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+    justify-content: center;
+    padding: 0.85rem;
+  }
+
+  /* Overlay */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-overlay.is-visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Close button */
+  .nav-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--surface-border);
+    background: var(--surface);
+    color: var(--cream-muted);
+    transition: all var(--transition);
+  }
+
+  .nav-close:hover {
+    border-color: var(--copper);
+    color: var(--cream);
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-overlay,
+  .nav-close {
+    display: none;
+  }
+}

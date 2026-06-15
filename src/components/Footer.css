@@ -1,0 +1,33 @@
+/* ── Footer ── */
+.site-footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--cream-muted);
+}
+
+.footer-text a {
+  color: var(--copper);
+  transition: color var(--transition);
+}
+
+.footer-text a:hover {
+  color: var(--copper-light);
+}
+
+.footer-built {
+  font-size: 0.75rem;
+  color: var(--espresso-light);
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,107 @@
+/* ── Contact Section ── */
+.contact-section {
+  text-align: center;
+}
+
+.contact-section .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-panel {
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--copper), transparent);
+}
+
+.contact-roles {
+  margin-bottom: 2rem;
+}
+
+.contact-roles p {
+  color: var(--cream-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.contact-actions .btn {
+  min-width: 140px;
+}
+
+.contact-actions .btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.contact-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--espresso);
+  margin: 2rem auto;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+  color: var(--cream-muted);
+  transition: all var(--transition);
+}
+
+.social-link:hover {
+  border-color: var(--copper);
+  color: var(--copper);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 122, 58, 0.15);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .contact-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+}
