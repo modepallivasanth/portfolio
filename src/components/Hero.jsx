@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="profile-stats">
           <div className="profile-stat">
             <span className="profile-stat-label">Experience</span>
-            <span className="profile-stat-value">3.5 Years</span>
+            <span className="profile-stat-value">3.7 Years</span>
           </div>
           <div className="profile-stat">
             <span className="profile-stat-label">Current Role</span>
@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
           <div className="profile-stat">
             <span className="profile-stat-label">Core Stack</span>
-            <span className="profile-stat-value">Java · Spring Boot · Oracle SQL · Python</span>
+            <span className="profile-stat-value">Java · Spring Boot · Oracle SQL · Python · React</span>
           </div>
         </div>
       </aside>
