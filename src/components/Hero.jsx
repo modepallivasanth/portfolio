@@ -18,7 +18,7 @@ export default function Hero() {
 
         <p className="hero-description">
           I build robust backend systems, optimize SQL-heavy workflows, and craft scalable
-          microservices. 3.7 years of shipping production code at enterprise scale.
+          microservices. 4 years of shipping production code at enterprise scale.
         </p>
 
         <div className="hero-actions" aria-label="Primary actions">
@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="profile-stats">
           <div className="profile-stat">
             <span className="profile-stat-label">Experience</span>
-            <span className="profile-stat-value">3.7 Years</span>
+            <span className="profile-stat-value">4 Years</span>
           </div>
           <div className="profile-stat">
             <span className="profile-stat-label">Current Role</span>
