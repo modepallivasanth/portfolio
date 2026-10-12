@@ -36,7 +36,7 @@ export default function Experience() {
         <span className="section-label">Experience</span>
         <h2 className="section-title">Professional Experience</h2>
         <p className="section-subtitle">
-          Backend development and production engineering at enterprise scale.
+          4 years of backend development and production engineering at enterprise scale.
         </p>
       </div>
 
